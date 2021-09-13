@@ -1,5 +1,6 @@
 using CaesarCipher;
 using NUnit.Framework;
+using System;
 
 namespace CaesarCipherNUnitTests
 {
@@ -31,7 +32,28 @@ namespace CaesarCipherNUnitTests
         [Test]
         public void CipherTest()
         {
-            Assert.Pass();
+            for(int i = 0; i < 1000; i++)
+            {
+                int n = new Random().Next(1000);
+                int length = new Random().Next(1, 100);
+                Cipher c = new Cipher(n);
+                string text = RandomString(length);
+                Assert.AreEqual(text, c.Decrypt(c.Encrypt(text)));
+                
+            }
+        }
+
+        public string RandomString(int length)
+        {
+            string text = "";
+            Random r = new Random();
+            for(int i = 0; i<length; i++)
+            {
+                char letter = (char)((65 + r.Next(0, 26)) + 32 * (new Random().Next(0, 2)));
+                text += letter;
+
+            }
+            return text;
         }
     }
 }
