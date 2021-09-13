@@ -18,7 +18,7 @@ namespace CaesarCipher
             }
 
             Console.WriteLine("Enter mode number: [1] Encrypt, [2] Decrypt");
-            while (!Int32.TryParse(Console.ReadLine(), out mode)&&(mode!=1||mode!=2))
+            while (!Int32.TryParse(Console.ReadLine(), out mode)||(mode!=1&&mode!=2))
             {
                 Console.WriteLine("Enter valid number");
             }
