@@ -24,28 +24,18 @@ namespace CaesarCipher
             }
 
             Console.WriteLine("Enter text: ");
-            while (output == null)
+            string input = Console.ReadLine();
+            Cipher c = new Cipher(n);
+            switch (mode)
             {
-                string input = Console.ReadLine();
-                Cipher c = new Cipher(n);
-                switch (mode)
-                {
-                    case 1:
-                        output = c.Encrypt(input);
-                        break;
-                    case 2:
-                        output = c.Decrypt(input);
-                        break;
-                }
-                if (output == null)
-                {
-                    Console.WriteLine("Text can only contain latin letters ");
-                }
-                else
-                {
-                    Console.WriteLine("Result: " + output);
-                }
+                case 1:
+                   output = c.Encrypt(input);
+                   break;
+                case 2:
+                   output = c.Decrypt(input);
+                   break;
             }
+            Console.WriteLine("Result: " + output);
 
         }
     }
