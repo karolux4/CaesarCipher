@@ -27,7 +27,7 @@ namespace CaesarCipher
 
             foreach (char letter in plaintext)
             {
-                // check if letter is from latin alphabet
+                // check if letter is from alphabet
                 if ((letter >= 'a' && letter <= 'z') || (letter >= 'A' && letter <= 'Z'))
                 {
                     // ASCII number for 'a'
@@ -43,7 +43,7 @@ namespace CaesarCipher
                 }
                 else
                 {
-                    // special characters and non-latin letters are not shifted
+                    // special characters are not shifted
                     ciphertext += letter;
                 }
             }
@@ -61,7 +61,7 @@ namespace CaesarCipher
 
             foreach (char letter in ciphertext)
             {
-                // check if letter is from latin alphabet
+                // check if letter is from alphabet
                 if ((letter >= 'a' && letter <= 'z') || (letter >= 'A' && letter <= 'Z'))
                 {
                     // ASCII number for 'a'
@@ -77,7 +77,7 @@ namespace CaesarCipher
                 }
                 else
                 {
-                    // special characters and non-latin letters are not shifted
+                    // special characters are not shifted
                     plaintext += letter;
                 }
             }
